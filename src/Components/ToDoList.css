@@ -1,0 +1,47 @@
+.header{
+	background-color: green;
+	height: 100px;
+
+}
+
+.content{
+	background-color: lightblue;
+	width:80%;
+	
+
+}
+.leftSidebar{
+	background-color: blue;
+	margin-right: 10px;
+
+}
+.rightSidebar{
+		background-color: blue;
+	width: 20%;
+	margin-left: 10px;
+
+}
+
+ 
+.checklist{
+	
+	background-color: pink;
+	padding-left: 12px
+}
+.checklist p{
+		display: inline-block;
+		margin-bottom: 0;
+
+}
+
+.options{
+	font-size: 25px;
+	color: blue;
+
+}
+
+.contact-card{
+	display: flex;
+	flex-direction:column;
+}
+

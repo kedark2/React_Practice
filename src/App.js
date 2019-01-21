@@ -1,28 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import ToDoList from "./Components/ToDoList.js";
+import ContactCard from "./Components/ContactCard.js";
+import Header from "./Components/Header.js";
+import Leftbar from "./Components/LeftSideBar.js";
+import Rightbar from "./Components/RightSidebar.js";
+import Content from "./Components/Content.js";
 
-class App extends Component {
-  render() {
+function App (){
+
+
+
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+
+        <Header />
+
+        <div className="try-webpage-man">
+          <Leftbar/>
+          <Content/>
+          <Rightbar/>
+
+        </div>
+       <Header/>
+
+      
+
       </div>
-    );
-  }
+    )
+  
 }
 
 export default App;
