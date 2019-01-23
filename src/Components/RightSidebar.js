@@ -1,14 +1,16 @@
 import React from "react";
 import "./ToDoList.css";
 import ContactCard from "./ContactCard.js";
-
+import contactsData from "../DataCollection/ContactCollection.js";
+ 
 function RightSidebar(){
+	const contacts = contactsData.map(contact => <ContactCard url={contact.photoUrl} name={contact.name} phone={contact.phone} email={contact.email}/> );
 	
 	return(
 		<div className="rightSidebar">
 			<div className="contact-card">
-	          <ContactCard name="Kedar paney" phone ="+917867654634" url="./apple.jpeg" email="something@gnal.com"/>
-	          <ContactCard name="Raj sharma" phone ="+3588765674" url="./2.JPG" email="nothing@gnal.com"/>
+				<h1>Contacts</h1>
+	          	{contacts}
 	        </div>
 		</div>
 	);

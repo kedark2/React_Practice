@@ -2,16 +2,16 @@ import React from "react";
 import  "./ToDoList.css";
 
 
-function ToDoList(){
+class ToDoList extends React.Component{
+	render(){
+		return(
+			<div className="checklist">
+				<input type="checkbox" checked= {this.props.item.completed}/> 
+				<p >{this.props.item.task} </p>
+			</div>
 
-return(
-	<div className="checklist">
-		<input type="checkbox" /> 
-		<p className="options" for ="checkbox">Menu maybe? </p>
-	</div>
+		);
 
-	)
-
+	}
 }
-
 export default ToDoList;

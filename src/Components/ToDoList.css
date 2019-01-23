@@ -1,47 +1,51 @@
 .header{
 	background-color: green;
-	height: 100px;
-
+	height: 400px;
+	background-image: url("../img/header.png"); 
+	background-size: cover;
 }
 
 .content{
 	background-color: lightblue;
+	background-size: cover;
 	width:80%;
 	
 
 }
 .leftSidebar{
 	background-color: blue;
-	margin-right: 10px;
 
 }
 .rightSidebar{
-		background-color: blue;
+	background-color: lightgreen;
 	width: 20%;
-	margin-left: 10px;
 
 }
-
+.footer{
+	background-color: green;
+	height: 200px;
+}
  
 .checklist{
-	
 	background-color: pink;
-	padding-left: 12px
+	padding-left: 2px
 }
 .checklist p{
 		display: inline-block;
 		margin-bottom: 0;
 
 }
-
-.options{
-	font-size: 25px;
-	color: blue;
-
-}
-
 .contact-card{
+	padding-left: 2px;
 	display: flex;
 	flex-direction:column;
+	color: blue;
+	padding-bottom: 0px;
+}
+
+.jokes{
+	padding-left: 15px;
+	color:purple;
+
 }
 

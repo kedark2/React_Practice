@@ -1,24 +1,18 @@
 import React from "react";
 import "./ToDoList.css"
 import ToDoList from "./ToDoList.js";
+import ToDoCollection from "../DataCollection/ToDoCollection.js";
 
-function LeftSidebar(){
-	
-	return(
-		<div className="leftSidebar">
-			<div className="todoList">
-
-	          <ToDoList/>
-	          <ToDoList/>
-	          <ToDoList/>
-	          <ToDoList/>
-	          <ToDoList/>
-	        </div>
-
-			
-		</div>
-
+class LeftSidebar extends React.Component{
+	render(){
+		const list = ToDoCollection.map( todo => <ToDoList item={todo}/>);
+		return(
+			<div className="leftSidebar">
+				<div className="todoList">
+		       		{list}
+		        </div>
+			</div>
 		);
+	}
 }
-
 export default LeftSidebar;

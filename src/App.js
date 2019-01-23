@@ -6,30 +6,23 @@ import Header from "./Components/Header.js";
 import Leftbar from "./Components/LeftSideBar.js";
 import Rightbar from "./Components/RightSidebar.js";
 import Content from "./Components/Content.js";
+import Footer from "./Components/Footer.js";
 
-function App (){
-
-
-
-
+class App extends React.Component{
+  render(){
     return (
       <div>
 
-        <Header />
-
-        <div className="try-webpage-man">
-          <Leftbar/>
-          <Content/>
-          <Rightbar/>
-
-        </div>
-       <Header/>
-
-      
-
+        <Header/>
+          <div className="try-webpage-man">
+            <Leftbar/>
+            <Content/>
+            <Rightbar/>
+          </div>
+        <Footer/>
       </div>
     )
   
+  }
 }
-
 export default App;
