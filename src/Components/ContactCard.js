@@ -2,7 +2,6 @@ import React from "react";
 
 function ContactCard(props){
 	console.log(props);
-	const imgur = props.email;
 	return(
 		<div className="contact-card">
 			<img src={require(`${props.url}`)} height="100" width="100"/>
