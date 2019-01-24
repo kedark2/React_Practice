@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-import ToDoList from "./Components/ToDoList.js";
-import ContactCard from "./Components/ContactCard.js";
 import Header from "./Components/Header.js";
 import Leftbar from "./Components/LeftSideBar.js";
 import Rightbar from "./Components/RightSidebar.js";
@@ -13,11 +11,18 @@ class App extends React.Component{
   constructor(){
     super()
     this.state= {
-      isLoading: true
-    }
+      isLoading: true,
+      character: {},
+      show:true,
+
+    };
   }
-  //Setting the time for the loader
   componentDidMount(){
+    //trying to fetch data from api, not working atm
+    fetch("https://swapi.co/api/people/1")
+      .then(response => response.jason())
+      .then( result => {this.setState({character:result})})
+  //setting timer when the loader should stop
     setTimeout(()=>{
       this.setState({
         isLoading:false
@@ -30,12 +35,13 @@ class App extends React.Component{
     return (
 
       <div>
-      <Conditional/>
+      <Conditional/> 
       {
         //condition for the loader to display
-        this.state.isLoading ? <div className="loader"><img src= {require("./Components/img/loading.gif")} margin-left="auto" margin-right="auto" display="block"/></div>:
+        this.state.isLoading ? <div className="loader"><img src= {require("./Components/img/loading.gif")} alt="Loader"/></div>:
         <div>
-          <Header/>
+          <p> Printing {this.state.character.name}</p>
+          { this.state.show ? <Header/> :null }
             <div className="try-webpage-man">
               <Leftbar/>
               <Content/>

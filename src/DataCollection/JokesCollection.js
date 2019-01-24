@@ -1,4 +1,3 @@
-import React from "react";
 
 const jokeCollection = [
 	{
@@ -27,32 +26,7 @@ const jokeCollection = [
 		punch: "You look flushed"
 	},
 	{
-		id:5,
-		question: "What did one toilet say to the other toilet?",
-		punch: "You look flushed"
-	},
-	{
-		id:5,
-		question: "What did one toilet say to the other toilet?",
-		punch: "You look flushed"
-	},
-	{
-		id:5,
-		question: "What did one toilet say to the other toilet?",
-		punch: "You look flushed"
-	},
-	{
-		id:5,
-		question: "What did one toilet say to the other toilet?",
-		punch: "You look flushed"
-	},
-	{
-		id:5,
-		question: "What did one toilet say to the other toilet?",
-		punch: "You look flushed"
-	},
-	{
-		id:5,
+		id:6,
 		question: "What did one toilet say to the other toilet?",
 		punch: "You look flushed"
 	}

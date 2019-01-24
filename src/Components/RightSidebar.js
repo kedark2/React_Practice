@@ -4,7 +4,7 @@ import ContactCard from "./ContactCard.js";
 import contactsData from "../DataCollection/ContactCollection.js";
  
 function RightSidebar(){
-	const contacts = contactsData.map(contact => <ContactCard url={contact.photoUrl} name={contact.name} phone={contact.phone} email={contact.email}/> );
+	const contacts = contactsData.map(contact => <ContactCard key={contact.id} url={contact.photoUrl} name={contact.name} phone={contact.phone} email={contact.email}/> );
 	
 	return(
 		<div className="rightSidebar">
