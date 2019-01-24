@@ -24,35 +24,39 @@ class Login extends React.Component{
 	loginHandler(){
 		if(this.state.username===this.state.password){
 			this.setState({
+				display:false,
 				message:"correct"
 
 			})
 		}else{
 			this.setState({
-				display:false,
-				message:"Credential incorrect"
+				message:"Credential incorrect. Please Try again"
 			})
 		}
 	}
 	render(){
+		let displayMessage = this.state.display ? null: this.state.message
 		return(
 			<div>
 			{this.state.display ? 
-				<form>
-					<input 
+				<div align = "center">
+				<form >
+					Username : <input 
 						type="text" 
-						value={this.state.username} name="username" 
+						name="username" 
 						onChange={this.onChangeHandler}/>
 					<br/><br/>
-					<input 
+					Password : <input 
 						type="password"
-						value={this.state.password}
 						name="password"
 						onChange={this.onChangeHandler}/>
 					<br/><br/>
-					<button onClick={this.loginHandler}>Login</button>
-				</form>: <App/>}
-				<h1>I am Logged {this.state.username} {this.state.password} {this.state.message}</h1>
+				</form>
+				<h1>{this.state.message} </h1>
+
+				<button onClick={this.loginHandler}>Login</button>
+
+				</div>: <App/> }
 			</div>
 		)
 	}

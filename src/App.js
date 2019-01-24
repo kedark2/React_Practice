@@ -6,6 +6,7 @@ import Rightbar from "./Components/RightSidebar.js";
 import Content from "./Components/Content.js";
 import Footer from "./Components/Footer.js";
 import Conditional from "./Components/Conditional.js";
+import Login from "./Login.js";
 
 class App extends React.Component{
   constructor(){
@@ -13,9 +14,10 @@ class App extends React.Component{
     this.state= {
       isLoading: true,
       character: {},
-      show:true,
+      isLoggedin: true,
 
     };
+    this.loginHandler = this.loginHandler.bind(this);
   }
   componentDidMount(){
     //trying to fetch data from api, not working atm
@@ -30,26 +32,37 @@ class App extends React.Component{
     },500)
   }
 
+  loginHandler(){
+    this.setState(prevState=>{
+      return{
+        isLoggedin : !prevState.isLoggedin
+      }
+    })
+  }
+
   render(){
 
     return (
-
       <div>
-      <Conditional/> 
-      {
-        //condition for the loader to display
-        this.state.isLoading ? <div className="loader"><img src= {require("./Components/img/loading.gif")} alt="Loader"/></div>:
+      {this.state.isLoggedin ?
         <div>
-          <p> Printing {this.state.character.name}</p>
-          { this.state.show ? <Header/> :null }
+        {
+          //condition for the loader to display
+          this.state.isLoading ? <div className="loader"><img src= {require("./Components/img/loading.gif")} alt="Loader"/></div>:
+          <div>
+            <button onClick={this.loginHandler}>Log out</button>
+            <Header/>
             <div className="try-webpage-man">
-              <Leftbar/>
-              <Content/>
-              <Rightbar/>
+                <Leftbar/>
+                <Content/>
+                <Rightbar/>
             </div>
-          <Footer/>
-        </div>
-      }</div>
+            <Footer/>
+          </div>
+        }
+        </div>: <Login/>
+      }
+      </div>
     )
   
   }
