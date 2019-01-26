@@ -6,5 +6,5 @@ import Login from "./Login.js";
 
 
 
-ReactDOM.render(<Login/>, document.getElementById("root"))
+ReactDOM.render(<App/>, document.getElementById("root"))
 

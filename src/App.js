@@ -22,7 +22,7 @@ class App extends React.Component{
   componentDidMount(){
     //trying to fetch data from api, not working atm
     fetch("https://swapi.co/api/people/1")
-      .then(response => response.jason())
+      .then(response => response.json())
       .then( result => {this.setState({character:result})})
   //setting timer when the loader should stop
     setTimeout(()=>{
@@ -31,7 +31,7 @@ class App extends React.Component{
       })
     },500)
   }
-
+//changes the login status 
   loginHandler(){
     this.setState(prevState=>{
       return{

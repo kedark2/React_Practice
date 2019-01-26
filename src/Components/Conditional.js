@@ -6,8 +6,7 @@ class Conditional extends React.Component{
 		super()
 		this.state={
 			isLoggedIn: true,
-			firstName: "Ram",
-			lastName: "kanel",
+
 		}
 		this.loginHandler = this.loginHandler.bind(this)
 		this.handleChange = this.handleChange.bind(this)

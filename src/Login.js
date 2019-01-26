@@ -15,12 +15,14 @@ class Login extends React.Component{
 		this.onChangeHandler= this.onChangeHandler.bind(this)
 		this.loginHandler = this.loginHandler.bind(this)
 	}
+	//takes the input and sets it into value
 	onChangeHandler(event){
 		const {name, value} = event.target
 		this.setState({
 			[name] : value	
 		})
 	}
+	//checks if the user inputs are correct.
 	loginHandler(){
 		if(this.state.username===this.state.password){
 			this.setState({
