@@ -9,9 +9,11 @@ class MemeGenerator extends Component{
 			bottomText: "",
 			randomImage:"http://i.imgflip.com/1bij.jpg",
 			allMemeImgs:[],
+			display: false,
 		}
 		this.handleChange = this.handleChange.bind(this)
 		this.handleSubmit= this.handleSubmit.bind(this)
+		this.toogleMemeGenerator= this.toogleMemeGenerator.bind(this)
 	}
 	/*getting data from api
 	*/
@@ -35,10 +37,20 @@ class MemeGenerator extends Component{
 		const randomMemeImg = this.state.allMemeImgs[randNum].url
 		this.setState({randomImage: randomMemeImg})
 	}
+	toogleMemeGenerator(){
+		this.setState(prevState=>{
+			return{
+			display: !prevState.display
+			}
+		})
+	}
 	render(){
+		const memeButtonText = this.state.display ? "Hide Meme Generator": "Show Meme Generator"
 		return(
+			<div align="center">
+			<h1 onClick={this.toogleMemeGenerator}>{memeButtonText}</h1>
+			{this.state.display ?
 			<div >
-				<h1>Meme Generator</h1>	
 				<form className="meme-form" onSubmit={this.handleSubmit}>
 					<input 
 							type="text" 
@@ -59,6 +71,7 @@ class MemeGenerator extends Component{
 					<h2 className="top">{this.state.topText}</h2>
 					<h2 className="bottom">{this.state.bottomText}</h2>
 				</div>
+			</div>: null}
 			</div>
 		);
 	}
