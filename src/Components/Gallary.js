@@ -3,11 +3,7 @@ import ImagePost from "./ImagePost.js";
 import photoCollection from "../DataCollection/PhotoCollection.js";
 
 class PhotoGallary extends React.Component{
-	constructor(){
-		super();
 
-
-	}
 	render(){
 		const photocc = photoCollection.map(photo => <ImagePost key={photo.id} imageUrl={photo.imageURL}/>)
 	    let rows = [];
@@ -28,7 +24,6 @@ class PhotoGallary extends React.Component{
 						{rows}
 					</tbody>
 				</table>
-				<p>length: {photocc.length}</p>
 			</div>
 			</div>
 		)

@@ -4,7 +4,7 @@ const ContactCollection =[
 		id:1,
 		name:"Kedar Pandey",
 		email: "kedar.pandey@something.com",
-		photoUrl: "./kedar.png",
+		photoUrl: "./img/kedar.png",
 		phone: "+912345676567"
 	},
 	{
@@ -16,7 +16,7 @@ const ContactCollection =[
 	},
 	{
 		id:3,
-		name:"Rame poudel",
+		name:"Rame Chaudhari",
 		email: "rame.poudel@something.com",
 		photoUrl: "./img/rame.png", 
 		phone: "+912345676567"

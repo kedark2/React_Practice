@@ -48,7 +48,7 @@ class App extends React.Component{
         <div>
         {
           //condition for the loader to display
-          this.state.isLoading ? <div className="loader"><img src= {require("./Components/img/loading.gif")} alt="Loader"/></div>:
+          this.state.isLoading ? <div className="loader"><img src= {require("./Components/img/loading.gif")} alt="LoaderNotFound"/></div>:
           <div>
             <button onClick={this.loginHandler}>Log out</button>
             <Header/>

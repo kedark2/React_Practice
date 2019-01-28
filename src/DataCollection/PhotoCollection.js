@@ -10,6 +10,10 @@ const PhotoCollection = [
 	{
 		id:3,
 		imageURL:"./img/rame.png",
+	},
+	{
+		id:4,
+		imageURL:"./img/raj.png",
 	}
 ]
 
