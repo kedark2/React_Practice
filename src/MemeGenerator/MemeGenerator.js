@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import MemeBox from "./MemeBox.js";
 import "./style.css";
 
 class MemeGenerator extends Component{
@@ -45,33 +46,13 @@ class MemeGenerator extends Component{
 		})
 	}
 	render(){
-		const memeButtonText = this.state.display ? "Hide Meme Generator": "Show Meme Generator"
 		return(
-			<div align="center">
-			<h1 onClick={this.toogleMemeGenerator}>{memeButtonText}</h1>
-			{this.state.display ?
-			<div >
-				<form className="meme-form" onSubmit={this.handleSubmit}>
-					<input 
-							type="text" 
-							name="topText" 
-							placeholder="Top Text"
-							value={this.state.topText} 
-							onChange={this.handleChange} /> <br/><br/>
-					<input 
-							type="text"
-							name="bottomText" 
-							placeholder="Bottom Text"
-							value= {this.state.bottomText} 
-							onChange={this.handleChange} />
-					<button>Generate</button>
-				</form>
-				<div className="meme-container">
-				<img src={this.state.randomImage} alt="memes"  />
-					<h2 className="top">{this.state.topText}</h2>
-					<h2 className="bottom">{this.state.bottomText}</h2>
-				</div>
-			</div>: null}
+			<div>
+				<MemeBox 
+					status={this.state} 
+					handleChange={this.handleChange} 
+					handleSubmit={this.handleSubmit}
+					toogleMemeGenerator={this.toogleMemeGenerator}/>
 			</div>
 		);
 	}
